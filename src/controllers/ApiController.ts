@@ -5,8 +5,8 @@ import {
 	type Request,
 	type Response,
 	Controller,
+	TokenService,
 } from "@shared/backend";
-import { TokenService } from "../services";
 import { UsersRepository } from "../repositories";
 
 @Router("/api")
@@ -29,10 +29,5 @@ export class ApiController extends Controller {
 		} = await UsersRepository.getUserByLogin(id);
 
 		return res.send(user);
-	}
-
-	@Method(GET, "/ping")
-	async ping(req: Request, res: Response) {
-		return res.sendStatus(200);
 	}
 }
