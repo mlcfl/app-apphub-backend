@@ -1,8 +1,9 @@
+import { getServerPort } from "@shared/backend";
 import { server } from "./server";
 
 import "dotenv/config";
 
-const port = process.env.PORT;
+const port = getServerPort();
 const instance = await server();
 
 instance.listen(port, () => {
