@@ -6,11 +6,15 @@ settings:
 
 overrides:
   '@shared/backend': link:../../../shared/shared-backend
+  '@shared/all': link:../../../shared/shared-all
 
 importers:
 
   .:
     dependencies:
+      '@shared/all':
+        specifier: link:../../../shared/shared-all
+        version: link:../../../shared/shared-all
       '@shared/backend':
         specifier: link:../../../shared/shared-backend
         version: link:../../../shared/shared-backend
