@@ -1,4 +1,4 @@
-import { getServerPort } from "@shared/backend";
+import { getServerPort, onServerStarted } from "@shared/backend";
 import { server } from "./server";
 
 import "dotenv/config";
@@ -6,6 +6,4 @@ import "dotenv/config";
 const port = getServerPort();
 const instance = await server();
 
-instance.listen(port, () => {
-	console.log(`Server is started on port ${port}`);
-});
+instance.listen(port, onServerStarted());
